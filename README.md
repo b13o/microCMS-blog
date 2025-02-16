@@ -51,7 +51,7 @@ Next.js と microCMS を用いた、JAMstack ブログの実装を学びます�
 
 ### **追加情報**
 
-今回推奨する ブログコンテンツの管理方法は、「[**microCMSr**](https://microcms.io)」の使用です。
+今回推奨する ブログコンテンツの管理方法は、「[**microCMS**](https://microcms.io)」の使用です。
 
 - microCMS では、管理画面からコンテンツを作成できます
 - データ取得には、開発者向けの API を使用できます
