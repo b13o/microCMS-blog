@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
         hostname: "images.microcms-assets.io",
       },
     ],
+    unoptimized: true, // Static Export時に必要
   },
+  output: "export", // Static Exportを有効化
 };
 
 export default nextConfig;
