@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img width="1440" alt="app-banner" src="https://github.com/user-attachments/assets/9017acd8-64c4-4299-b044-5a45ea48dfcf" />
 
-## Getting Started
+# JAMstack ブログアプリ
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+このプロジェクトでは、microCMS を使用したシンプルなブログアプリを構築します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ビルド時に静的 HTML を生成することで、従来の Web サイトより表示速度を向上させた JAMstack ブログです。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 学習目標
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js と microCMS を用いた、JAMstack ブログの実装を学びます。
 
-## Learn More
+合わせて、Vitest を使用したフロントエンドテストについても、確認してください。
 
-To learn more about Next.js, take a look at the following resources:
+### 推奨技術
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Vitest によるテストの実装
+- Testing Library/ React による DOM テスト
+- MSW による API モック
+- Next.js App Router でのプロジェクト構築
+- TypeScript による型チェック
+- Tailwind CSS を用いたスタイリング
+- shadcn/ui によるコンポーネントの導入
+- microCMS によるコンテンツの管理
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 お題
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 「ユーザーストーリー」を全て満たす、アプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を、参照してください。
+- なお、スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **未読記事のランダム表示：**
+   - TOP ページのヒーロセクションには、未読の記事を大きく表示する
+2. **記事一覧表示**：
+   - microCMS から取得した記事を一覧表示
+   - グリッドレイアウトで表示する
+3. **記事詳細表示**：
+   - 記事の詳細ページを実装する
+   - 詳細ページの URL は、`domain.com/posts/[slug]`という形式にする
+4. **その他：**
+   - ビルド時に静的サイト生成を行う
+   - microCMS 上で記事を追加した際に、webhook で通知を受け取り、自動でビルドを行う
+
+### **追加情報**
+
+今回推奨する ブログコンテンツの管理方法は、「[**microCMS**](https://microcms.io)」の使用です。
+
+- microCMS では、管理画面からコンテンツを作成できます
+- データ取得には、開発者向けの API を使用できます
+- ユーザー登録が必要ですが、個人の小規模なプロジェクトでは無料枠の範囲で使用できます
+
+## ユーザーストーリー
+
+- **TOP ページ：**
+  - [ ] ユーザーがサイトにアクセスすると、H1 タグでサイトのコピーが表示されている
+  - [ ] ヒーロセクションの下には、未読記事が 1 つランダムで大きく表示されている
+  - [ ] 全ての記事が既読の場合は、全ての中からランダムに 1 つを表示する
+  - [ ] 未読記事のカードには、背景に画像を表示し、その上にタイトル、タグ、導入文を表示する
+  - [ ] 導入文は、記事本文から最初の 80 文字のテキストを表示し、それ以降は（`…`）と表示する
+  - [ ] 記事一覧がグリッドレイアウトで表示されている
+  - [ ] 各記事カードには、タイトル、タグ、サムネイル画像、投稿時刻が表示される
+  - [ ] 投稿時刻は、直近６ヶ月以内の投稿を相対的な時刻で表示する(ex: 10 分前, 3 日前, 6 か月前)
+  - [ ] 記事カードをクリックすると、詳細ページに遷移する
+- **詳細ページ：**
+  - [ ] 詳細ページの URL は、`domain.com/posts/[slug]`という形式になっている
+  - [ ] 詳細ページには、記事の全文が表示される
+- **その他**：
+  - [ ] 必須機能に対して、適切なテストが実装されている
+  - [ ] アプリケーションがデプロイされており、誰でもアクセス可能である
+  - [ ] microCMS 上で記事を追加した際に、webhook で通知を受け取り、自動でビルドが行われる
